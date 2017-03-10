@@ -112,7 +112,13 @@ namespace CadnunsDev.CalculadoraInvestimento
                 }
             };
 
-            foreach(RadioButton rdb in tipoPeriodo.Controls)
+            tboxAporteMensal.TextChanged += (obj, evt) =>
+            {
+                CalcularRendimentos();
+            };
+
+
+            foreach (RadioButton rdb in tipoPeriodo.Controls)
             {
                 rdb.CheckedChanged += (obj, evt) => {
                     CalcularRendimentos();
@@ -126,22 +132,54 @@ namespace CadnunsDev.CalculadoraInvestimento
             var periodo = 0d;
             var taxaMensal = 0M;
             var taxaAnual = 0M;
+            var aporteMensal = 0M;
+            decimal valorFututro = 0M;
+            decimal rendimentos = 0M;
+            var valorInvestido = 0M;
 
             decimal.TryParse(tboxVlrInicial.Text, out valorInicial);
             double.TryParse(tboxPeriodo.Text, out periodo);
             decimal.TryParse(tboxTxMensal.Text, out taxaMensal);
             decimal.TryParse(tboxTxAnual.Text, out taxaAnual);
+            decimal.TryParse(tboxAporteMensal.Text, out aporteMensal);
 
-            var taxa = (double)((rdbAnual.Checked ? taxaAnual : taxaMensal) / 100M);
+            //if (aporteMensal <= 0)
+            //{
+            //    var taxa = (double)((rdbAnual.Checked ? taxaAnual : taxaMensal) / 100M);
 
+            //    valorFututro = valorInicial * Convert.ToDecimal(Math.Pow((1d + taxa), periodo));
+            //    rendimentos = valorInicial * Convert.ToDecimal(Math.Pow((1d + taxa), periodo) - 1d);
+            //}
+            //else
+            //{
+            //    var meses = rdbAnual.Checked ? periodo * 12 : periodo;
+            //    //var valorCorrente = valorInicial;
+            //    //var rendimentosComAporte = 0M;
+            //    valorFututro = valorInicial;
+            //    for (int i = 0; i < meses; i++)
+            //    {
+            //        var juros = valorFututro * taxaMensal / 100;
+            //        valorFututro += juros + aporteMensal;
+            //        rendimentos += juros;
+            //    }
+            //}
 
-
-            var valorFututro = valorInicial * Convert.ToDecimal(Math.Pow((1d + taxa), periodo));
-            var rendimentos = valorInicial * Convert.ToDecimal(Math.Pow((1d + taxa), periodo)-1d);
+            var meses = rdbAnual.Checked ? periodo * 12 : periodo;
+            //var valorCorrente = valorInicial;
+            //var rendimentosComAporte = 0M;
+            valorFututro = valorInicial;
+            valorInvestido += valorInicial;
+            for (int i = 0; i < meses; i++)
+            {
+                var juros = valorFututro * taxaMensal / 100;
+                valorFututro += juros + aporteMensal;
+                rendimentos += juros;
+                valorInvestido += aporteMensal;
+            }
 
             lbValorFinal.Text = "R$ " + valorFututro.ToString("0.00");
-
             lbRendimentos.Text = "R$ " + rendimentos.ToString("0.00");
+            lbVlrInvestido.Text = "R$ " + valorInvestido.ToString("0.00");
         }
 
         private decimal EnesimaRaiz(decimal valor, decimal raizDesejada)

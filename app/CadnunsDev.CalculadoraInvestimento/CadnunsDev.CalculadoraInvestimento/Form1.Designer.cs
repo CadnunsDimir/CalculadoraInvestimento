@@ -43,6 +43,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lbRendimentos = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tboxAporteMensal = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lbVlrInvestido = new System.Windows.Forms.Label();
             this.tipoPeriodo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,7 +85,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 78);
+            this.label3.Location = new System.Drawing.Point(241, 15);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 13);
             this.label3.TabIndex = 5;
@@ -89,7 +93,7 @@
             // 
             // tboxVlrInicial
             // 
-            this.tboxVlrInicial.Location = new System.Drawing.Point(112, 75);
+            this.tboxVlrInicial.Location = new System.Drawing.Point(342, 12);
             this.tboxVlrInicial.Name = "tboxVlrInicial";
             this.tboxVlrInicial.Size = new System.Drawing.Size(123, 20);
             this.tboxVlrInicial.TabIndex = 4;
@@ -97,7 +101,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(25, 109);
+            this.label4.Location = new System.Drawing.Point(25, 81);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 13);
             this.label4.TabIndex = 7;
@@ -105,7 +109,7 @@
             // 
             // tboxPeriodo
             // 
-            this.tboxPeriodo.Location = new System.Drawing.Point(112, 106);
+            this.tboxPeriodo.Location = new System.Drawing.Point(112, 78);
             this.tboxPeriodo.Name = "tboxPeriodo";
             this.tboxPeriodo.Size = new System.Drawing.Size(123, 20);
             this.tboxPeriodo.TabIndex = 6;
@@ -114,7 +118,7 @@
             // 
             this.tipoPeriodo.Controls.Add(this.rdbMensal);
             this.tipoPeriodo.Controls.Add(this.rdbAnual);
-            this.tipoPeriodo.Location = new System.Drawing.Point(28, 133);
+            this.tipoPeriodo.Location = new System.Drawing.Point(28, 116);
             this.tipoPeriodo.Name = "tipoPeriodo";
             this.tipoPeriodo.Size = new System.Drawing.Size(207, 50);
             this.tipoPeriodo.TabIndex = 8;
@@ -146,44 +150,88 @@
             // lbValorFinal
             // 
             this.lbValorFinal.AutoSize = true;
-            this.lbValorFinal.Location = new System.Drawing.Point(350, 19);
+            this.lbValorFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbValorFinal.Location = new System.Drawing.Point(379, 112);
             this.lbValorFinal.Name = "lbValorFinal";
-            this.lbValorFinal.Size = new System.Drawing.Size(45, 13);
+            this.lbValorFinal.Size = new System.Drawing.Size(72, 20);
             this.lbValorFinal.TabIndex = 9;
             this.lbValorFinal.Text = "R$ 0,00";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(275, 19);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(261, 112);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 13);
+            this.label5.Size = new System.Drawing.Size(85, 20);
             this.label5.TabIndex = 10;
             this.label5.Text = "Montante";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(275, 50);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(261, 143);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 13);
+            this.label6.Size = new System.Drawing.Size(115, 20);
             this.label6.TabIndex = 12;
             this.label6.Text = "Rendimentos";
             // 
             // lbRendimentos
             // 
             this.lbRendimentos.AutoSize = true;
-            this.lbRendimentos.Location = new System.Drawing.Point(350, 50);
+            this.lbRendimentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRendimentos.Location = new System.Drawing.Point(379, 143);
             this.lbRendimentos.Name = "lbRendimentos";
-            this.lbRendimentos.Size = new System.Drawing.Size(45, 13);
+            this.lbRendimentos.Size = new System.Drawing.Size(72, 20);
             this.lbRendimentos.TabIndex = 11;
             this.lbRendimentos.Text = "R$ 0,00";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(241, 43);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(95, 13);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Aporte Mensal(R$)";
+            // 
+            // tboxAporteMensal
+            // 
+            this.tboxAporteMensal.Location = new System.Drawing.Point(342, 40);
+            this.tboxAporteMensal.Name = "tboxAporteMensal";
+            this.tboxAporteMensal.Size = new System.Drawing.Size(123, 20);
+            this.tboxAporteMensal.TabIndex = 13;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(261, 81);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(114, 20);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Vlr. Investido";
+            // 
+            // lbVlrInvestido
+            // 
+            this.lbVlrInvestido.AutoSize = true;
+            this.lbVlrInvestido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbVlrInvestido.Location = new System.Drawing.Point(379, 81);
+            this.lbVlrInvestido.Name = "lbVlrInvestido";
+            this.lbVlrInvestido.Size = new System.Drawing.Size(72, 20);
+            this.lbVlrInvestido.TabIndex = 15;
+            this.lbVlrInvestido.Text = "R$ 0,00";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(582, 206);
+            this.ClientSize = new System.Drawing.Size(476, 178);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lbVlrInvestido);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.tboxAporteMensal);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lbRendimentos);
             this.Controls.Add(this.label5);
@@ -224,6 +272,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lbRendimentos;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox tboxAporteMensal;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbVlrInvestido;
     }
 }
 
